@@ -48,12 +48,16 @@ stages{
  
 // } 
  
- stage('Jacoco Build'){
+stage('Jacoco Build'){
           steps{
             step([$class: 'JacocoPublisher', 
             execPattern: 'target/*.exec',
             classPattern: 'target/classes',
-            sourcePattern: 'src/ma
+            sourcePattern: 'src/main/java',
+            exclusionPattern: 'src/test*'
+            ])
+          }
+        }
  
 stage("Sonar") {
           steps {
