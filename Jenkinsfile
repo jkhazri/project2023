@@ -64,7 +64,6 @@ stage("Sonar") {
 
             sh "mvn sonar:sonar \
   "-Dsonar.projectKey=test2023" \
-  
   "-Dsonar.login=squ_589d5c5b31e5e92f8f4338957d7bd0ee16969bdc""
           }
         }
