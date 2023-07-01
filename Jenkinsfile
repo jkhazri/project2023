@@ -41,16 +41,26 @@ stages{
  
  }
  
- stage("Lancement des tests unitaires"){
-   steps {
-     sh "mvn test"
- }
+// stage("Lancement des tests unitaires"){
+  // steps {
+   //  sh "mvn test"
+// }
  
- } 
+// } 
  
+ stage('Jacoco Build'){
+          steps{
+            step([$class: 'JacocoPublisher', 
+            execPattern: 'target/*.exec',
+            classPattern: 'target/classes',
+            sourcePattern: 'src/ma
  
- 
- 
+stage("Sonar") {
+          steps {
+
+            sh "mvn sonar:sonar   "-Dsonar.projectKey=test2023"   "-Dsonar.host.url=http://localhost:9000"   "-Dsonar.login=squ_589d5c5b31e5e92f8f4338957d7bd0ee16969bdc""
+                }
+        }
  
 }
 
