@@ -19,7 +19,7 @@ stages{
  stage('clone git'){
     steps {
     echo "Getting Project from Git";
-    git branch:"main",url:"https://github.com/MarouaMad/javajenkinsdevops.git";
+    git branch:"main",url:"https://github.com/jkhazri/project2023.git";
     
     }
  
