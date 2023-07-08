@@ -78,11 +78,14 @@ stage('Jacoco Build'){
 //  "-Dsonar.login=squ_589d5c5b31e5e92f8f4338957d7bd0ee16969bdc""
       //    }
      //   }
+	 
  stage('Deploiement dans nexus ') {
      		 steps{
                           
-  			sh "mvn deploy" }
-                }
+  			sh "mvn deploy -DskipTests=true" }
+			
+                }				
+		
 }
 
 }
