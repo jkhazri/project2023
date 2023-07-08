@@ -15,11 +15,14 @@ agent any
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "admin:admin"
     }
+	tools {
+        maven 'Maven 3.6.3'
+    }
 stages{
  stage('clone git'){
     steps {
     echo "Getting Project from Git";
-    git branch:"main",url:"https://github.com/jkhazri/project2023.git";
+    git branch:"main",url:"https://github.com/jkhazri/project2023";
     
     }
  
