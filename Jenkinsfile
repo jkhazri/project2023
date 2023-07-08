@@ -25,11 +25,15 @@ stages{
  
  }
 
- stage('Verificationdu version Maven'){
-   steps {
-      sh "mvn --version"
-   }
- }
+stage("Deployment stage") {
+            steps {
+                script {
+                 pom = readMavenPom file: "pom.xml";
+                   echo "${pom.artifactId}-${pom.version}.${pom.packaging}"
+                   sh "mvn deploy:deploy-file -DgroupId=${pom.groupId} -DartifactId=${pom.artifactId} -Dversion=${pom.version}  -DgeneratePom=true -Dpackaging=${pom.packaging}  -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/${pom.artifactId}-${pom.version}.${pom.packaging}"
+                }
+            }
+        }
  
  stage("supprimer le contenu du dossier target"){
    steps {
