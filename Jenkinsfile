@@ -29,11 +29,11 @@ stages{
  
  }
 
- stage('Verificationdu version Maven'){
+/* stage('Verificationdu version Maven'){
    steps {
       sh "mvn --version"
    }
- }
+ } */
  
  stage("supprimer le contenu du dossier target"){
    steps {
