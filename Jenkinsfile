@@ -15,6 +15,7 @@ agent any
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "admin:admin"
     }
+	
 stages{
  stage('clone git'){
     steps {
