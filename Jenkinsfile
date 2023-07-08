@@ -66,7 +66,7 @@ stages{
 //stage("Deploiement dans nexus ") {
    //  		 steps{  
   			//sh "mvn deploy -DskipTests=true"
-         //       }
+         //       } }
 
 
 
@@ -82,6 +82,6 @@ stage("Deployment stage") {
         
   
  
-}
+
 
 }
